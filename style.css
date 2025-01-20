@@ -9,12 +9,13 @@ body, h1, h2, h3, p, ul, li, table {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #afe19d;
+    background-color: skyblue; /* Changed to sky blue */
+    color: #000; /* Ensures text is visible on a light background */
 }
 
 /* Navigation bar styling */
 nav {
-    background-color: #333;
+    background-color: orange; /* Changed to orange */
     padding: 10px 0;
 }
 
@@ -38,7 +39,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #66e637;
+    background-color: #ffcc80; /* Light orange hover effect */
 }
 
 /* Section styling */
@@ -69,8 +70,8 @@ section:first-child {
     right: 0;
 }
 
-/* Styling for unnati_big section */
-#unnati_big {
+/* Styling for abhyudaya_big section */
+#abhyudaya_big {
     display: visible;
     overflow: hidden;
     height: 60px;
@@ -141,4 +142,4 @@ hr {
     position: center;
     top: 0px;
     right: 0;
-}
+    }
