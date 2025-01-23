@@ -5,16 +5,15 @@ body, h1, h2, h3, p, ul, li, table {
     font-family: 'Poppins', sans-serif;
 }
 
-/* General body styling  */
+/* General body styling (Mobile defaults) */
 body {
     line-height: 1.6;
     background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     color: #333;
-    padding: 20px; /* Desktop padding */
-    min-width: 768px; /* Prevent mobile scaling issues */
+    padding: 10px; /* Added a small padding to prevent content from touching edges */
 }
 
-/* Navigation bar styling */
+/* Navigation bar styling (Mobile defaults) */
 nav {
     background: linear-gradient(90deg, #ffb347, #ff9100);
     padding: 10px 0;
@@ -28,13 +27,13 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row;
-    align-items: normal;
+    flex-direction: column; /* Stack the list vertically on mobile */
+    align-items: center; /* Center the menu items */
 }
 
 nav li {
-    margin: 0 15px;
-    text-align: left;
+    margin: 5px 0; /* Reduced vertical spacing between links */
+    text-align: center; /* Center the links in mobile */
 }
 
 nav a {
@@ -45,8 +44,8 @@ nav a {
     transition: background-color 0.3s ease;
     display: block;
     font-weight: 500;
-    width: auto;
-     box-sizing: content-box;
+    width: 80%; /* make the links to fit the width */
+    box-sizing: border-box;
 }
 
 nav a:hover {
@@ -54,14 +53,14 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* Section styling  */
+/* Section styling (Mobile defaults) */
 section {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    margin: 20px auto;
-    max-width: 80%;
+    margin: 10px auto;
+    max-width: 95%; /* Take up most of the mobile screen */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -74,14 +73,15 @@ section:hover {
 }
 
 
-/* Image logo styling  */
+/* Image logo styling (Mobile defaults) */
 .img-logo {
-     width: 200px;
-    margin: 0 30px 0 0;
-    float: left;
+    width: 150px;
+    margin: 0 auto 10px;
+    display: block; /* Ensure it is always block-level */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+     float:none; /* remove the float property */
 }
 
 .img-logo:hover {
@@ -89,24 +89,24 @@ section:hover {
 }
 
 
-/* Styling for specific section with id abcde */
+/* Styling for specific section with id abcde (Mobile defaults) */
 #abcde {
-    width: 200px;
-    height: 200px;
-    position: relative;
-    top: 50px;
+    width: 150px;
+    height: 150px;
+     position: relative;
+    top: 20px;
     right: 0;
-    margin: inherit;
+     margin: 0 auto;
 }
 
-/* Table styling  */
+/* Table styling (Mobile defaults) */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow-x: initial;
-    display: table;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    display: block;
 }
 
 table, th, td {
@@ -124,7 +124,8 @@ th {
     font-weight: bold;
 }
 
-/* Horizontal line styling */
+
+/* Horizontal line styling (Mobile defaults) */
 hr {
     border: 0;
     height: 2px;
@@ -132,10 +133,10 @@ hr {
     margin: 15px 0;
 }
 
-/* Event button styling */
+/* Event button styling (Mobile defaults) */
 .cricket, .badminton, .registration, .Extended, .Pass, .location {
     background: linear-gradient(45deg, #4CAF50, #2E7D32);
-    padding: 10px 15px;
+    padding: 10px 15px; /* Reduced padding on mobile */
     text-align: center;
     border-radius: 8px;
     color: #fff;
@@ -143,10 +144,10 @@ hr {
     line-height: 25px;
     text-decoration: none;
     display: inline-block;
-    margin: 10px;
+    margin: 5px; /* Reduce margin for mobile */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduce font size for mobile */
 }
 
 .cricket:hover,
@@ -159,16 +160,16 @@ hr {
      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Elite button styling */
+/* Elite button styling (Mobile defaults) */
 .elite {
     width: 200px;
     border-radius: 10px;
     margin: 15px auto;
-    display: block;
+    display: block; /* Center the image */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Font Styles */
+/* Font Styles (Mobile defaults) */
 h1 {
   font-size: 1.8em;
   color: #2c3e50;
@@ -208,4 +209,63 @@ a{
 }
 a:hover{
   color: #e67e22;
+}
+
+
+/* Desktop adjustments (using Media Query) */
+@media (min-width: 768px) {
+
+    /* Body Adjustments */
+    body{
+        padding: 20px;
     }
+    /* Navigation Adjustments */
+    nav ul {
+         flex-direction: row; /* Display the menu horizontally on desktop */
+         align-items: normal; /* Remove center alignment */
+    }
+     nav li {
+        margin: 0 15px; /* Add spacing between links on desktop */
+        text-align: left; /* align text to the left */
+    }
+     nav a {
+       width: auto; /* auto width on desktop */
+       box-sizing: content-box; /* make the content width */
+    }
+    
+    /* Section Adjustments */
+      section {
+        max-width: 80%; /* Limit width on larger screens */
+        padding: 30px;
+        margin: 20px auto;
+    }
+    
+     /* Image logo adjustments */
+    .img-logo {
+        width: 200px;
+        margin: 0 30px 0 0;
+        float: left;
+    }
+
+    /* Table Adjustments */
+    table{
+        overflow-x: initial;
+         display: table;
+    }
+
+     /* Button Adjustments */
+    .cricket, .badminton, .registration, .Extended, .Pass, .location {
+        font-size: 1rem;
+        margin: 10px;
+    }
+    
+    /* Logo Adjustments */
+      #abcde {
+    width: 200px;
+    height: 200px;
+     position: relative;
+    top: 50px;
+    right: 0;
+     margin: inherit;
+    }
+}
