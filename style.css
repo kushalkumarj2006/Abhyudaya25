@@ -8,7 +8,8 @@ body, h1, h2, h3, p, ul, li, table {
 /* General body styling  */
 body {
     line-height: 1.6;
-    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    background: url("./images/background_page.png") no-repeat center center fixed; /* Added background image */
+    background-size: cover; /* Make background image cover the entire viewport */
     color: #333;
     padding: 20px; /* Desktop padding */
     min-width: 768px; /* Prevent mobile scaling issues */
@@ -68,8 +69,8 @@ section {
 section:first-child {
     text-align: left;
     padding: 20px;
-     display: flex;
-     align-items: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 section:hover {
@@ -84,8 +85,8 @@ section:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
- section:first-child .img-logo {
-     margin-right: 30px;
+section:first-child .img-logo {
+    margin-right: 30px;
 }
 
 .img-logo:hover {
@@ -99,7 +100,6 @@ section:hover {
     position: relative;
     top: 50px;
     right: 0;
-    margin: inherit;
     margin: 50px auto 0;
 }
 
@@ -174,17 +174,17 @@ hr {
 
 /* Font Styles */
 h1 {
-  font-size: 1.8em;
-  color: #2c3e50;
-  margin-bottom: 8px;
-  font-weight: 600;
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 h2 {
-  font-size: 1.4em;
-  color: #34495e;
-  margin-bottom: 6px;
-  font-weight: 500;
+    font-size: 1.4em;
+    color: #34495e;
+    margin-bottom: 6px;
+    font-weight: 500;
 }
 
 h3 {
@@ -207,9 +207,9 @@ p{
 }
 
 a{
-  color: #ff9100;
-  transition: color 0.3s ease;
+    color: #ff9100;
+    transition: color 0.3s ease;
 }
 a:hover{
-  color: #e67e22;
+    color: #e67e22;
     }
