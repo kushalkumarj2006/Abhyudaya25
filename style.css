@@ -2,20 +2,21 @@
 body, h1, h2, h3, p, ul, li, table {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Changed to a more modern font */
 }
 
 /* General body styling */
 body {
-    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: skyblue; /* Updated background color */
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Subtle gradient background */
+    color: #333; /* Darker text */
 }
 
 /* Navigation bar styling */
 nav {
-    background-color: orange; /* Updated background color */
-    padding: 10px 0;
+    background: linear-gradient(90deg, #ffb347, #ff9100); /* Orange gradient navbar */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     display: flex;
     justify-content: center;
 }
@@ -30,24 +31,38 @@ nav ul {
 } 
 
 nav li {
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
 nav a {
     text-decoration: none;
-    color: white;
-    padding: 10px 15px;
+    color: #fff; /* White text */
+    padding: 12px 20px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
     display: block;
+    font-weight: 500; /* Slightly bolder text */
 }
 
 nav a:hover {
-    background-color: #ffcc80; /* Hover color */
+    background-color: rgba(255, 255, 255, 0.2); /* Lighter hover */
+    transform: translateY(-2px);
 }
 
 /* Section styling */
 section {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for cards */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 80%; /* Keep sections relatively contained */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+section:hover {
+    transform: translateY(-5px);
 }
 
 /* Styling for the first section */
@@ -58,16 +73,23 @@ section:first-child {
 
 /* Image logo styling */
 .img-logo {
-    float: left; 
-    width: 400px; 
-    padding: 0px; 
+    float: left;
+    width: 200px; /* Adjusted logo size */
+    margin-right: 30px; /* Spacing from the text */
+    border-radius: 5px; /* Slight rounding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.img-logo:hover {
+    transform: scale(1.05);
 }
 
 /* Styling for specific section with id abcde */
 #abcde {
-    width: 400px; 
-    height: 400px;
-    position: center;
+    width: 200px; /* Adjusted logo size */
+    height: 200px;
+    position: relative;
     top: 50px;
     right: 0;
 }
@@ -77,19 +99,29 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
-    border: 1px solid #100f0f;
+    border: 1px solid #ccc;
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Subtle background for thead */
+    font-weight: bold;
 }
 
 /* Horizontal line styling */
 hr {
-    border: 1px solid #333;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #ff9100, rgba(0,0,0,0)); /* Creative hr */
+    margin: 20px 0;
 }
 
 /* Media query for smaller screens */
@@ -107,20 +139,77 @@ hr {
 
 /* Event button styling */
 .cricket, .badminton, .registration, .Extended, .Pass, .location {
-    width: 115px;
-    height: 25px;
-    background: #4E9CAF;
-    padding: 10px;
+    background: linear-gradient(45deg, #4CAF50, #2E7D32); /* Green gradient */
+    padding: 10px 20px;
     text-align: center;
-    border-radius: 5px;
-    color: rgb(10, 10, 10);
+    border-radius: 8px;
+    color: #fff;
     font-weight: bold;
     line-height: 25px;
+    text-decoration: none;
+    display: inline-block; /* Allows for margin/padding changes */
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cricket:hover,
+.badminton:hover,
+.registration:hover,
+.Extended:hover,
+.Pass:hover,
+.location:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Elite button styling */
 .elite {
-    float: center; 
-    width: 350px; 
-    padding: 0px; 
+    float: center;
+    width: 250px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
+
+/* Font Styles */
+h1 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #34495e;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #576471;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+p{
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #666;
+}
+
+a{
+  color: #ff9100;
+  transition: color 0.3s ease;
+}
+a:hover{
+  color: #e67e22;
+    }
