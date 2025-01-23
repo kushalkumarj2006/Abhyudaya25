@@ -2,21 +2,22 @@
 body, h1, h2, h3, p, ul, li, table {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Changed to a more modern font */
+    font-family: 'Poppins', sans-serif;
 }
 
-/* General body styling */
+/* General body styling (Mobile defaults) */
 body {
     line-height: 1.6;
-    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Subtle gradient background */
-    color: #333; /* Darker text */
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    color: #333;
+    padding: 10px; /* Added a small padding to prevent content from touching edges */
 }
 
-/* Navigation bar styling */
+/* Navigation bar styling (Mobile defaults) */
 nav {
-    background: linear-gradient(90deg, #ffb347, #ff9100); /* Orange gradient navbar */
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background: linear-gradient(90deg, #ffb347, #ff9100);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
 }
@@ -26,80 +27,86 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-} 
+    flex-direction: column; /* Stack the list vertically on mobile */
+    align-items: center; /* Center the menu items */
+}
 
 nav li {
-    margin: 0 15px;
+    margin: 5px 0; /* Reduced vertical spacing between links */
+    text-align: center; /* Center the links in mobile */
 }
 
 nav a {
     text-decoration: none;
-    color: #fff; /* White text */
-    padding: 12px 20px;
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
     display: block;
-    font-weight: 500; /* Slightly bolder text */
+    font-weight: 500;
+    width: 80%; /* make the links to fit the width */
+    box-sizing: border-box;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighter hover */
+    background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
-/* Section styling */
+/* Section styling (Mobile defaults) */
 section {
     text-align: center;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for cards */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    margin: 20px auto;
-    max-width: 80%; /* Keep sections relatively contained */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
-    transition: transform 0.3s ease; /* Smooth transition */
+    margin: 10px auto;
+    max-width: 95%; /* Take up most of the mobile screen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
-
-section:hover {
-    transform: translateY(-5px);
-}
-
-/* Styling for the first section */
 section:first-child {
     text-align: left;
     padding: 20px;
 }
+section:hover {
+    transform: translateY(-5px);
+}
 
-/* Image logo styling */
+
+/* Image logo styling (Mobile defaults) */
 .img-logo {
-    float: left;
-    width: 200px; /* Adjusted logo size */
-    margin-right: 30px; /* Spacing from the text */
-    border-radius: 5px; /* Slight rounding */
+    width: 150px;
+    margin: 0 auto 10px;
+    display: block; /* Ensure it is always block-level */
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+     float:none; /* remove the float property */
 }
 
 .img-logo:hover {
     transform: scale(1.05);
 }
 
-/* Styling for specific section with id abcde */
+
+/* Styling for specific section with id abcde (Mobile defaults) */
 #abcde {
-    width: 200px; /* Adjusted logo size */
-    height: 200px;
-    position: relative;
-    top: 50px;
+    width: 150px;
+    height: 150px;
+     position: relative;
+    top: 20px;
     right: 0;
+     margin: 0 auto;
 }
 
-/* Table styling */
+/* Table styling (Mobile defaults) */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Allow horizontal scrolling */
+    display: block;
 }
 
 table, th, td {
@@ -107,50 +114,40 @@ table, th, td {
 }
 
 th, td {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
+    white-space: nowrap;
 }
 
 th {
-    background-color: #f2f2f2; /* Subtle background for thead */
+    background-color: #f2f2f2;
     font-weight: bold;
 }
 
-/* Horizontal line styling */
+
+/* Horizontal line styling (Mobile defaults) */
 hr {
     border: 0;
     height: 2px;
-    background: linear-gradient(to right, rgba(0,0,0,0), #ff9100, rgba(0,0,0,0)); /* Creative hr */
-    margin: 20px 0;
+    background: linear-gradient(to right, rgba(0,0,0,0), #ff9100, rgba(0,0,0,0));
+    margin: 15px 0;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 750px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav li {
-        margin-bottom: 10px;
-        margin-right: 0;
-    }
-}
-
-/* Event button styling */
+/* Event button styling (Mobile defaults) */
 .cricket, .badminton, .registration, .Extended, .Pass, .location {
-    background: linear-gradient(45deg, #4CAF50, #2E7D32); /* Green gradient */
-    padding: 10px 20px;
+    background: linear-gradient(45deg, #4CAF50, #2E7D32);
+    padding: 10px 15px; /* Reduced padding on mobile */
     text-align: center;
     border-radius: 8px;
     color: #fff;
     font-weight: bold;
     line-height: 25px;
     text-decoration: none;
-    display: inline-block; /* Allows for margin/padding changes */
-    margin: 10px;
+    display: inline-block;
+    margin: 5px; /* Reduce margin for mobile */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.9rem; /* Reduce font size for mobile */
 }
 
 .cricket:hover,
@@ -163,46 +160,46 @@ hr {
      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Elite button styling */
+/* Elite button styling (Mobile defaults) */
 .elite {
-    float: center;
-    width: 250px;
+    width: 200px;
     border-radius: 10px;
-    margin-top: 15px;
+    margin: 15px auto;
+    display: block; /* Center the image */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Font Styles */
+/* Font Styles (Mobile defaults) */
 h1 {
-  font-size: 2.2em;
+  font-size: 1.8em;
   color: #2c3e50;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #34495e;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 500;
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #576471;
     font-weight: 500;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #444;
     margin-bottom: 4px;
 }
 
 p{
-    font-size: 1.1em;
-    line-height: 1.8;
+    font-size: 0.9em;
+    line-height: 1.6;
     color: #666;
 }
 
@@ -212,4 +209,63 @@ a{
 }
 a:hover{
   color: #e67e22;
+}
+
+
+/* Desktop adjustments (using Media Query) */
+@media (min-width: 768px) {
+
+    /* Body Adjustments */
+    body{
+        padding: 20px;
+    }
+    /* Navigation Adjustments */
+    nav ul {
+         flex-direction: row; /* Display the menu horizontally on desktop */
+         align-items: normal; /* Remove center alignment */
+    }
+     nav li {
+        margin: 0 15px; /* Add spacing between links on desktop */
+        text-align: left; /* align text to the left */
+    }
+     nav a {
+       width: auto; /* auto width on desktop */
+       box-sizing: content-box; /* make the content width */
+    }
+    
+    /* Section Adjustments */
+      section {
+        max-width: 80%; /* Limit width on larger screens */
+        padding: 30px;
+        margin: 20px auto;
+    }
+    
+     /* Image logo adjustments */
+    .img-logo {
+        width: 200px;
+        margin: 0 30px 0 0;
+        float: left;
+    }
+
+    /* Table Adjustments */
+    table{
+        overflow-x: initial;
+         display: table;
+    }
+
+     /* Button Adjustments */
+    .cricket, .badminton, .registration, .Extended, .Pass, .location {
+        font-size: 1rem;
+        margin: 10px;
+    }
+    
+    /* Logo Adjustments */
+      #abcde {
+    width: 200px;
+    height: 200px;
+     position: relative;
+    top: 50px;
+    right: 0;
+     margin: inherit;
+    }
     }
